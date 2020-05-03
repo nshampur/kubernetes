@@ -54,4 +54,10 @@ type Interface interface {
 
 	// DeleteInstances deletes the instances for a VirtualMachineScaleSet.
 	DeleteInstances(ctx context.Context, resourceGroupName string, vmScaleSetName string, vmInstanceIDs compute.VirtualMachineScaleSetVMInstanceRequiredIDs) *retry.Error
+
+	// DeallocateInstances deallocates the instances for a VirtualMachineScaleSet.
+	DeallocateInstances(ctx context.Context, resourceGroupName string, vmScaleSetName string, vmInstanceIDs compute.VirtualMachineScaleSetVMInstanceRequiredIDs) *retry.Error
+
+	// StartInstances starts the instances for a VirtualMachineScaleSet.
+	StartInstances(ctx context.Context, resourceGroupName string, vmScaleSetName string, vmInstanceIDs compute.VirtualMachineScaleSetVMInstanceRequiredIDs) *retry.Error
 }

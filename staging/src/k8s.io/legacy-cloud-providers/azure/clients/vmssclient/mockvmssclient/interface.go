@@ -139,3 +139,34 @@ func (mr *MockInterfaceMockRecorder) DeleteInstances(ctx, resourceGroupName, vmS
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteInstances", reflect.TypeOf((*MockInterface)(nil).DeleteInstances), ctx, resourceGroupName, vmScaleSetName, vmInstanceIDs)
 }
+
+
+
+// DeallocateInstances mocks base method
+func (m *MockInterface) DeallocateInstances(ctx context.Context, resourceGroupName, vmScaleSetName string, vmInstanceIDs compute.VirtualMachineScaleSetVMInstanceRequiredIDs) *retry.Error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeallocateInstances", ctx, resourceGroupName, vmScaleSetName, vmInstanceIDs)
+	ret0, _ := ret[0].(*retry.Error)
+	return ret0
+}
+
+// DeallocateInstances indicates an expected call of DeallocateInstances
+func (mr *MockInterfaceMockRecorder) DeallocateInstances(ctx, resourceGroupName, vmScaleSetName, vmInstanceIDs interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeallocateInstances", reflect.TypeOf((*MockInterface)(nil).DeallocateInstances), ctx, resourceGroupName, vmScaleSetName, vmInstanceIDs)
+}
+
+// StartInstances mocks base method
+func (m *MockInterface) StartInstances(ctx context.Context, resourceGroupName, vmScaleSetName string, vmInstanceIDs compute.VirtualMachineScaleSetVMInstanceRequiredIDs) *retry.Error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "StartInstances", ctx, resourceGroupName, vmScaleSetName, vmInstanceIDs)
+	ret0, _ := ret[0].(*retry.Error)
+	return ret0
+}
+
+// StartInstances indicates an expected call of StartInstances
+func (mr *MockInterfaceMockRecorder) StartInstances(ctx, resourceGroupName, vmScaleSetName, vmInstanceIDs interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "StartInstances", reflect.TypeOf((*MockInterface)(nil).StartInstances), ctx, resourceGroupName, vmScaleSetName, vmInstanceIDs)
+}
+
